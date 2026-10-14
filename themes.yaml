@@ -1,0 +1,145 @@
+# ---------------------------------------------------------------------------
+# Colour and font themes
+# ---------------------------------------------------------------------------
+# The active theme is chosen in config.yaml (`theme:`).
+# With `theme_switcher: true` in config.yaml, visitors get a small picker to
+# preview every theme below. Turn it off before the site goes public.
+#
+# Fonts: any Google Fonts family name. `weights` is optional (default
+# "400;500;600"); set it if a family doesn't offer those weights.
+# `fallback` is used while the font loads or if it fails.
+#
+# Colours, for both `light` and `dark`:
+#   paper         page background
+#   surface       cards, header band, figure background
+#   ink           headings and strong text
+#   ink-2         body text
+#   ink-3         muted text (dates, captions)
+#   rule          thin dividers
+#   rule-strong   section dividers, input borders
+#   primary       main accent (honest points in the figure, buttons on hover)
+#   primary-soft  light tint of primary (highlights, initials tiles)
+#   adversary     the "attack" colour (adversarial points, current nav item)
+#   link          link colour
+#
+# Every theme must define every colour in both modes; the build checks this.
+
+navy:
+  label: "Navy and red"
+  fonts:
+    heading: { family: "Literata", fallback: "Georgia, serif" }
+    text: { family: "Hanken Grotesk", fallback: "'Helvetica Neue', Arial, sans-serif" }
+  light:
+    paper: "#f5f7fa"
+    surface: "#ffffff"
+    ink: "#14213d"
+    ink-2: "#48526a"
+    ink-3: "#6f7a90"
+    rule: "#d9dee7"
+    rule-strong: "#b9c1cf"
+    primary: "#1f4e8c"
+    primary-soft: "#dbe5f3"
+    adversary: "#b3122e"
+    link: "#1f4e8c"
+  dark:
+    paper: "#0f1a2b"
+    surface: "#15233a"
+    ink: "#e8edf5"
+    ink-2: "#b2bccd"
+    ink-3: "#8592a8"
+    rule: "#26364f"
+    rule-strong: "#3a4c69"
+    primary: "#86b4f0"
+    primary-soft: "#1d3150"
+    adversary: "#ff6b7d"
+    link: "#9cc3f5"
+
+graphite:
+  label: "Graphite and teal"
+  fonts:
+    heading: { family: "IBM Plex Sans", fallback: "'Helvetica Neue', Arial, sans-serif" }
+    text: { family: "IBM Plex Sans", fallback: "'Helvetica Neue', Arial, sans-serif" }
+  light:
+    paper: "#f4f5f5"
+    surface: "#ffffff"
+    ink: "#1c2024"
+    ink-2: "#454c53"
+    ink-3: "#6c747c"
+    rule: "#dde0e2"
+    rule-strong: "#bcc2c6"
+    primary: "#0e6b6b"
+    primary-soft: "#d5ebe9"
+    adversary: "#c2410c"
+    link: "#0b5e5e"
+  dark:
+    paper: "#16191c"
+    surface: "#1e2226"
+    ink: "#eceff1"
+    ink-2: "#b6bdc3"
+    ink-3: "#88919a"
+    rule: "#2d3338"
+    rule-strong: "#434b52"
+    primary: "#5fc4c0"
+    primary-soft: "#1f3a3a"
+    adversary: "#ff8a4c"
+    link: "#7fd3cf"
+
+forest:
+  label: "Forest and amber"
+  fonts:
+    heading: { family: "Source Serif 4", fallback: "Georgia, serif" }
+    text: { family: "Source Sans 3", fallback: "'Helvetica Neue', Arial, sans-serif" }
+  light:
+    paper: "#f5f6f3"
+    surface: "#ffffff"
+    ink: "#1d2a1f"
+    ink-2: "#475249"
+    ink-3: "#6d776e"
+    rule: "#dce0da"
+    rule-strong: "#bcc3b9"
+    primary: "#2f5d3a"
+    primary-soft: "#dde9de"
+    adversary: "#b45309"
+    link: "#2c5a36"
+  dark:
+    paper: "#131a15"
+    surface: "#1a231c"
+    ink: "#e9eee9"
+    ink-2: "#b3bdb4"
+    ink-3: "#869187"
+    rule: "#2a352c"
+    rule-strong: "#3f4d42"
+    primary: "#8fc79b"
+    primary-soft: "#22382a"
+    adversary: "#f0a24a"
+    link: "#a3d6ae"
+
+plum:
+  label: "Plum and coral"
+  fonts:
+    heading: { family: "Fraunces", fallback: "Georgia, serif" }
+    text: { family: "Work Sans", fallback: "'Helvetica Neue', Arial, sans-serif" }
+  light:
+    paper: "#f7f5f8"
+    surface: "#ffffff"
+    ink: "#26172e"
+    ink-2: "#544759"
+    ink-3: "#7b6f80"
+    rule: "#e2dce5"
+    rule-strong: "#c5bbc9"
+    primary: "#5b2a6e"
+    primary-soft: "#ebdff0"
+    adversary: "#d1495b"
+    link: "#5b2a6e"
+  dark:
+    paper: "#1a1220"
+    surface: "#23192a"
+    ink: "#f1ebf3"
+    ink-2: "#c2b6c7"
+    ink-3: "#968a9b"
+    rule: "#33263b"
+    rule-strong: "#4a3a54"
+    primary: "#c9a0dc"
+    primary-soft: "#3a2646"
+    adversary: "#ff7f8e"
+    link: "#d8b6e8"

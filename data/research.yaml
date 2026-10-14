@@ -1,0 +1,69 @@
+# Each research area gets a section on /research/ and a filter on /publications/.
+# `slug` is what publications.yaml and people.yaml refer to in their `areas:` lists.
+# If you omit `slug`, it is derived from the title.
+
+- slug: byzantine-learning
+  title: "Byzantine-resilient distributed learning"
+  short: "Byzantine learning"
+  summary: >-
+    Training a model across many machines when an unknown fraction of them
+    may send arbitrary, even coordinated, updates.
+  description: |
+    In distributed and federated learning, a server averages gradients sent by
+    many workers. A single malicious worker can move that average anywhere.
+    We design aggregation rules that tolerate a bounded fraction of
+    adversarial workers, prove what they can and cannot guarantee, and test
+    them against the strongest attacks we can build.
+  questions:
+    - "What is the best accuracy achievable when a fraction f of workers is adversarial?"
+    - "How do heterogeneous (non-i.i.d.) data and robustness interact?"
+    - "Which attacks remain undetected by current robust aggregators?"
+
+- slug: data-poisoning
+  title: "Data poisoning and dataset ownership"
+  short: "Data poisoning"
+  summary: >-
+    How small, targeted changes to training data shape a model's behaviour,
+    and how data owners can check whether their data was used.
+  description: |
+    Large models are trained on data their builders do not fully control. We
+    study poisoning attacks that implant behaviours through a small number of
+    crafted samples, defences against them, and the reverse problem: methods
+    that let the owner of a dataset verify, after the fact, that a model was
+    trained on it.
+  questions:
+    - "How many poisoned samples does it take to change a model's behaviour at scale?"
+    - "Can dataset watermarks survive fine-tuning and distillation?"
+
+- slug: collaborative-learning
+  title: "Robust collaborative learning"
+  short: "Collaborative learning"
+  summary: >-
+    Learning from contributions of many participants with differing goals,
+    some of whom may act strategically.
+  description: |
+    Recommendation systems, preference learning and crowd-sourced evaluation
+    all aggregate input from many people. We study voting-style aggregation
+    with provable resistance to manipulation, and the trade-off between
+    robustness, fairness and accuracy.
+  questions:
+    - "How much influence should a single participant be allowed to have?"
+    - "Can robustness and personalization coexist?"
+
+- slug: ai-safety
+  title: "Alignment and safety of large models"
+  short: "Alignment and safety"
+  summary: >-
+    What can be guaranteed when large models are trained on proxies,
+    preferences and data no one fully controls.
+  description: |
+    Large models combine the hardest features of the settings above:
+    heterogeneous data, untrusted sources and huge numbers of parameters. We
+    study the limits of preference-based alignment, formalise when optimising
+    a proxy metric stops serving the true goal (Goodhart's law), and look for
+    architectural single points of failure such as outlier activations in
+    transformers.
+  questions:
+    - "When does training on a preference actually make the preferred answer more likely?"
+    - "Under which conditions does optimising a proxy metric harm the true goal?"
+    - "Which safety properties are provably out of reach for models trained on user-generated data?"

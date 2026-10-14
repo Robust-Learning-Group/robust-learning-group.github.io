@@ -1,0 +1,65 @@
+{# ---------------------------------------------------------------- #}
+{# Publication entry                                                 #}
+{# ---------------------------------------------------------------- #}
+{% macro publication(pub, show_areas=true) %}
+<article class="pub" data-areas="{{ pub.areas | join(' ') }}" data-search="{{ pub.search_text }}">
+  <h3 class="pub-title">
+    {% if pub.primary_url %}<a href="{{ pub.primary_url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}
+  </h3>
+  <p class="pub-authors">
+    {% for a in pub.authors %}
+      {%- if a.member -%}
+        <a class="author-member" href="{{ url('/people/') }}#{{ a.slug }}">{{ a.name }}</a>
+      {%- else -%}
+        {{ a.name }}
+      {%- endif -%}
+      {%- if not loop.last %}, {% endif -%}
+    {% endfor %}
+  </p>
+  <p class="pub-meta">
+    <span class="pub-venue">{{ pub.venue }}</span>
+    {% if pub.note %}<span class="pub-note">{{ pub.note }}</span>{% endif %}
+  </p>
+  {% if pub.links or (show_areas and pub.areas) %}
+  <div class="pub-foot">
+    {% if pub.links %}
+    <ul class="pub-links">
+      {% for l in pub.links %}<li><a href="{{ l.url }}">{{ l.label }}</a></li>{% endfor %}
+    </ul>
+    {% endif %}
+    {% if show_areas and pub.areas %}
+    <ul class="pub-areas" aria-label="Research areas">
+      {% for slug in pub.areas %}<li><a href="{{ url('/research/') }}#{{ slug }}">{{ areas_by_slug[slug].short }}</a></li>{% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+  {% endif %}
+</article>
+{% endmacro %}
+
+{# ---------------------------------------------------------------- #}
+{# Avatar: photo or initials                                         #}
+{# ---------------------------------------------------------------- #}
+{% macro avatar(p, size="") %}
+{% if p.photo %}
+<img class="avatar {{ size }}" src="{{ static(p.photo) }}" alt="{{ p.name }}" loading="lazy">
+{% else %}
+<span class="avatar avatar-initials {{ size }}" aria-hidden="true">{{ p.initials }}</span>
+{% endif %}
+{% endmacro %}
+
+{# ---------------------------------------------------------------- #}
+{# News entry                                                        #}
+{# ---------------------------------------------------------------- #}
+{% macro news_item(n) %}
+<li class="news-item kind-{{ n.kind }}">
+  <time datetime="{{ n.date_iso }}">{{ n.date_str }}</time>
+  <div class="news-body">
+    <p class="news-kind">{{ n.kind_label }}</p>
+    <h3 class="news-title">
+      {% if n.link %}<a href="{{ n.link }}">{{ n.title }}</a>{% else %}{{ n.title }}{% endif %}
+    </h3>
+    {% if n.body %}<div class="news-text">{{ n.body | markdown }}</div>{% endif %}
+  </div>
+</li>
+{% endmacro %}

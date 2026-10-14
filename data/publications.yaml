@@ -1,0 +1,112 @@
+# Newest first is not required; the build sorts by date.
+#
+# Fields:
+#   title, authors (list), venue, date  (required; date may be YYYY, YYYY-MM or YYYY-MM-DD)
+#   areas:    slugs from research.yaml (used for filters and the research page)
+#   note:     e.g. "Oral", "Spotlight", "Best paper award"
+#   links:    paper, arxiv, code, project, slides, video, doi, bibtex
+#
+# Names that match people.yaml (or their aliases) are highlighted automatically.
+#
+# Sources (checked October 2026): arXiv, ICLR/ICML virtual pages, mlanthology,
+# the IP Paris research portal, and El Mahdi's Lacuna profile. Venues marked
+# "check" come from a secondary source only.
+
+# ---------------------------------------------------------------- 2026
+- title: "Variance-Reduced (ε, δ)-Unlearning using Forget Set Gradients"
+  authors: ["Martin Van Waerebeke", "Marco Lorenzi", "Kevin Scaman", "El Mahdi El Mhamdi", "Giovanni Neglia"]
+  venue: "ICML 2026"
+  date: 2026-07
+  areas: []
+  links:
+    arxiv: "https://arxiv.org/abs/2602.14938"
+
+- title: "Byzantine Machine Learning: MultiKrum and an Optimal Notion of Robustness"
+  authors: ["Gilles Bareilles", "Wassim Bouaziz", "Julien Fageot", "El Mahdi El Mhamdi"]
+  venue: "ICLR 2026"
+  date: 2026-04
+  areas: [byzantine-learning]
+  links:
+    arxiv: "https://arxiv.org/abs/2602.03899"
+
+- title: "Winter Soldier: Backdooring Language Models at Pre-Training with Indirect Data Poisoning"
+  authors: ["Wassim Bouaziz", "Mathurin Videau", "Nicolas Usunier", "El Mahdi El Mhamdi"]
+  venue: "ICLR 2026"
+  date: 2026-04
+  areas: [data-poisoning]
+  links:
+    arxiv: "https://arxiv.org/abs/2506.14913"
+
+- title: "On Monotonicity in AI Alignment"
+  authors: ["Gilles Bareilles", "Julien Fageot", "Lê-Nguyên Hoang", "Peva Blanchard", "Wassim Bouaziz", "Sébastien Rouault", "Sadegh Farhadkhani", "El Mahdi El Mhamdi"]
+  venue: "ICLR 2026"
+  date: 2026-04
+  areas: [ai-safety]
+  links: {}   # TODO: add arXiv/OpenReview link
+
+- title: "Approaching the Harm of Gradient Attacks While Only Flipping Labels"
+  authors: ["Abdessamad El-Kabid", "El Mahdi El Mhamdi"]
+  venue: "ICLR 2026"   # check: venue from Lacuna only
+  date: 2026-04
+  areas: [data-poisoning]
+  links:
+    arxiv: "https://arxiv.org/abs/2503.00140"
+
+- title: "Dropout and the Outliers: Could Transformers Overcome Their Single Points of Failure?"
+  authors: ["Nour Hezbri", "Gilles Bareilles", "El Mahdi El Mhamdi"]
+  venue: "Sci4DL Workshop 2026"
+  date: 2026-04
+  areas: [ai-safety]
+  links:
+    paper: "https://openreview.net/forum?id=HkGpw5UgwM"
+
+# ---------------------------------------------------------------- 2025
+- title: "Inverting Gradient Attacks Makes Powerful Data Poisoning"
+  authors: ["Wassim Bouaziz", "El Mahdi El Mhamdi", "Nicolas Usunier"]
+  venue: "Transactions on Machine Learning Research (TMLR)"
+  date: 2025-12
+  areas: [data-poisoning, byzantine-learning]
+  links:
+    arxiv: "https://arxiv.org/abs/2410.21453"
+    code: "https://github.com/wesbz/inverting-gradient"
+
+- title: "The Strong, Weak and Benign Goodhart's Law: An Independence-Free and Paradigm-Agnostic Formalisation"
+  authors: ["Adrien Majka", "El Mahdi El Mhamdi"]
+  venue: "MoFA Workshop 2025"
+  date: 2025-07
+  areas: [ai-safety]
+  links:
+    paper: "https://openreview.net/forum?id=detITSRuT2"
+
+- title: "Data Taggants: Dataset Ownership Verification via Harmless Targeted Data Poisoning"
+  authors: ["Wassim Bouaziz", "El Mahdi El Mhamdi", "Nicolas Usunier"]
+  venue: "ICLR 2025"
+  date: 2025-04
+  areas: [data-poisoning]
+  links:
+    arxiv: "https://arxiv.org/abs/2410.09101"
+
+# ---------------------------------------------------------------- earlier
+- title: "Distributed Momentum for Byzantine-resilient Stochastic Gradient Descent"
+  authors: ["El Mahdi El Mhamdi", "Rachid Guerraoui", "Sébastien Rouault"]
+  venue: "ICLR 2021"
+  date: 2021-05
+  areas: [byzantine-learning]
+  links:
+    code: "https://github.com/LPD-EPFL/ByzantineMomentum"
+
+# - title: "The Hidden Vulnerability of Distributed Learning in Byzantium"
+#   authors: ["El Mahdi El Mhamdi", "Rachid Guerraoui", "Sébastien Rouault"]
+#   venue: "ICML 2018"
+#   date: 2018-07
+#   areas: [byzantine-learning]
+#   links:
+#     arxiv: "https://arxiv.org/abs/1802.07927"
+
+# - title: "Machine Learning with Adversaries: Byzantine Tolerant Gradient Descent"
+#   authors: ["Peva Blanchard", "El Mahdi El Mhamdi", "Rachid Guerraoui", "Julien Stainer"]
+#   venue: "NeurIPS 2017"
+#   date: 2017-12
+#   areas: [byzantine-learning]
+#   links:
+#     arxiv: "https://arxiv.org/abs/1703.02757"

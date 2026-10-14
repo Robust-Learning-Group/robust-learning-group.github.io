@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Page not found | {{ config.site_name }}{% endblock %}
+{% block content %}
+<header class="page-head wrap">
+  <h1>Page not found</h1>
+  <p class="lede">This page does not exist or has moved. Try the <a href="{{ url('/') }}">home page</a> or <a href="{{ url('/publications/') }}">publications</a>.</p>
+</header>
+{% endblock %}

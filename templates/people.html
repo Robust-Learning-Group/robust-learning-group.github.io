@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% from "partials/macros.html" import avatar %}
+{% block title %}People | {{ config.site_name }}{% endblock %}
+
+{% block content %}
+<header class="page-head wrap">
+  <h1>People</h1>
+  <p class="lede">Members of the group and close collaborators.</p>
+</header>
+
+<div class="wrap">
+  {% for section in people.sections %}
+  <section class="people-section">
+    <h2>{{ section.title }}</h2>
+    <ul class="person-grid">
+      {% for p in section.members %}
+      <li class="person" id="{{ p.slug }}">
+        {{ avatar(p) }}
+        <div class="person-text">
+          <h3>{{ p.name }}</h3>
+          {% if p.role %}<p class="person-role">{{ p.role }}</p>{% endif %}
+          {% if p.affiliation %}<p class="person-aff">{{ p.affiliation }}</p>{% endif %}
+          {% if p.bio %}<p class="person-bio">{{ p.bio | markdown_inline }}</p>{% endif %}
+          {% if p.areas %}
+          <ul class="person-areas" aria-label="Research areas">
+            {% for slug in p.areas %}<li><a href="{{ url('/research/') }}#{{ slug }}">{{ areas_by_slug[slug].short }}</a></li>{% endfor %}
+          </ul>
+          {% endif %}
+          {% if p.links %}
+          <ul class="person-links">
+            {% for l in p.links %}<li><a href="{{ l.url }}">{{ l.label }}</a></li>{% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+
+  {% if people.alumni %}
+  <section class="people-section">
+    <h2>Alumni</h2>
+    <div class="table-scroll">
+      <table class="alumni">
+        <thead><tr><th scope="col">Name</th><th scope="col">Role in the group</th><th scope="col">Years</th><th scope="col">Now</th></tr></thead>
+        <tbody>
+          {% for p in people.alumni %}
+          <tr id="{{ p.slug }}">
+            <td>{% if p.links %}<a href="{{ p.links[0].url }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</td>
+            <td>{{ p.role }}</td>
+            <td>{{ p.years }}</td>
+            <td>{{ p.now }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  {% endif %}
+</div>
+{% endblock %}

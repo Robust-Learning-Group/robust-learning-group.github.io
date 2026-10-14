@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% from "partials/macros.html" import publication %}
+{% block title %}Publications | {{ config.site_name }}{% endblock %}
+
+{% block content %}
+<header class="page-head wrap">
+  <h1>Publications</h1>
+  <p class="lede">Names of group members are highlighted.</p>
+
+  <div class="filters" role="search">
+    <div class="chips" role="group" aria-label="Filter by research area">
+      <button type="button" class="chip" data-area="" aria-pressed="true">All areas</button>
+      {% for area in research %}
+      <button type="button" class="chip" data-area="{{ area.slug }}" aria-pressed="false">{{ area.short }}</button>
+      {% endfor %}
+    </div>
+    <label class="search">
+      <span class="visually-hidden">Search publications</span>
+      <input type="search" id="pub-search" placeholder="Search titles, authors, venues" autocomplete="off">
+    </label>
+  </div>
+  <p class="filter-status" id="pub-status" aria-live="polite"></p>
+</header>
+
+<div class="wrap">
+  {% for group in publications_by_year %}
+  <section class="year-group" data-year-group>
+    <h2 class="year">{{ group.year }}</h2>
+    <div class="pub-list">
+      {% for pub in group.publications %}{{ publication(pub) }}{% endfor %}
+    </div>
+  </section>
+  {% else %}
+  <p class="empty">No publications yet. Add entries to data/publications.yaml.</p>
+  {% endfor %}
+  <p class="empty" id="pub-empty" hidden>No publications match these filters.</p>
+</div>
+{% endblock %}

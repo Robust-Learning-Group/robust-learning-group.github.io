@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% from "partials/macros.html" import publication, avatar %}
+{% block title %}Research | {{ config.site_name }}{% endblock %}
+
+{% block content %}
+<header class="page-head wrap">
+  <h1>Research</h1>
+  <p class="lede">Four connected questions about learning from sources that cannot all be trusted.</p>
+  <nav class="toc" aria-label="Research areas">
+    {% for area in research %}<a href="#{{ area.slug }}">{{ area.title }}</a>{% endfor %}
+  </nav>
+</header>
+
+<div class="wrap">
+  {% for area in research %}
+  <section class="area" id="{{ area.slug }}">
+    <div class="area-main">
+      <h2>{{ area.title }}</h2>
+      <p class="area-summary">{{ area.summary }}</p>
+      {% if area.description %}<div class="prose">{{ area.description | markdown }}</div>{% endif %}
+      {% if area.questions %}
+      <h3 class="small-head">Open questions</h3>
+      <ul class="questions">
+        {% for q in area.questions %}<li>{{ q | markdown_inline }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+
+    <aside class="area-side">
+      {% if area.people %}
+      <h3 class="small-head">People</h3>
+      <ul class="mini-people">
+        {% for p in area.people %}
+        <li><a href="{{ url('/people/') }}#{{ p.slug }}">{{ avatar(p, "avatar-xs") }}<span>{{ p.name }}</span></a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      {% if area.publications %}
+      <h3 class="small-head">Publications</h3>
+      <div class="pub-list pub-list-tight">
+        {% for pub in area.publications[:3] %}{{ publication(pub, show_areas=false) }}{% endfor %}
+      </div>
+      <a class="more" href="{{ url('/publications/') }}?area={{ area.slug }}">
+        {% if area.publications | length > 3 %}All {{ area.publications | length }} papers in this area{% else %}See on the publications page{% endif %}
+      </a>
+      {% endif %}
+    </aside>
+  </section>
+  {% endfor %}
+</div>
+{% endblock %}

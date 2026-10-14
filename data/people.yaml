@@ -1,0 +1,150 @@
+# Sections appear on /people/ in this order. Rename or add sections freely.
+#
+# Fields per person:
+#   name (required)
+#   role:        e.g. "PhD student, since 2024" (optional; hidden when empty)
+#   photo:       path inside static/, e.g. images/people/jane-doe.jpg (initials are shown if absent)
+#   affiliation: optional second line under the role
+#   bio:         one or two sentences, Markdown allowed
+#   areas:       list of slugs from research.yaml
+#   links:       website, scholar, github, linkedin, orcid, email
+#   aliases:     other spellings used in author lists (for highlighting on /publications/)
+#
+# Alumni additionally take `years` and `now`.
+#
+# NOTE ON SOURCES (October 2026): bios below were written from public pages
+# and from papers co-authored with El Mahdi. Roles marked "TODO" could not be
+# confirmed publicly; please fill them in (or ask each person to check theirs).
+
+sections:
+  - title: "Faculty"
+    members:
+      - name: "El Mahdi El Mhamdi"
+        aliases: ["El-Mahdi El-Mhamdi", "El Mahdi El-Mhamdi", "El-Mahdi El Mhamdi"]
+        role: "Assistant Professor, group leader"
+        affiliation: "CMAP, École Polytechnique"
+        bio: >-
+          Works on robust distributed learning, data poisoning and AI
+          alignment. Co-inventor of the Krum and Bulyan aggregation rules;
+          PhD from EPFL, previously a senior research scientist at Google.
+        areas: [byzantine-learning, data-poisoning, collaborative-learning, ai-safety]
+        links:
+          website: "https://elmahdielmhamdi.com"
+          scholar: "https://scholar.google.com/citations?user=kNA-WLQAAAAJ"
+
+  - title: "Researchers and students"
+    # Alphabetical by surname.
+    members:
+      - name: "Jalal Baim"
+        # TODO: role, bio, areas
+
+      - name: "Gilles Bareilles"
+        role: ""  # TODO: confirm role
+        bio: >-
+          Works on the theory of robust aggregation and preference alignment.
+          PhD from Université Grenoble Alpes (Laboratoire Jean Kuntzmann);
+          previously a postdoc at the Czech Technical University in Prague.
+        areas: [byzantine-learning, ai-safety]
+
+      - name: "Mariam Barry"
+        # TODO: role, bio, areas
+
+      - name: "Martin Beaufils"
+        # TODO: role, bio, areas
+
+      - name: "Wassim Bouaziz"
+        role: ""  # TODO: confirm role (affiliated with Meta FAIR and CMAP in his papers)
+        bio: >-
+          Works on data poisoning: dataset ownership verification through
+          harmless poisons, gradient-inversion attacks, and indirect poisoning
+          of language models at pre-training.
+        areas: [data-poisoning, byzantine-learning]
+        links:
+          github: "https://github.com/wesbz"
+
+      - name: "Arthur Danjou"
+        # TODO: role, bio, areas
+
+      - name: "Abdessamad El-Kabid"
+        role: ""  # TODO: confirm role
+        bio: >-
+          Works on label-flipping attacks and how much harm weak, realistic
+          adversaries can cause in distributed training.
+        areas: [data-poisoning]
+
+      - name: "Nour Hezbri"
+        role: ""  # TODO: confirm role
+        bio: >-
+          Works on outlier activations in transformers and the effect of
+          Dropout on these single points of failure.
+        areas: [ai-safety]
+
+      - name: "Adrien Majka"
+        role: ""  # TODO: confirm role
+        bio: >-
+          Works on formalising Goodhart's law and what it implies for
+          optimising proxy metrics in AI alignment.
+        areas: [ai-safety]
+
+      - name: "Hallison Paz"
+        role: "Postdoctoral researcher"
+        bio: >-
+          Works on data poisoning and dataset ownership verification. PhD
+          from IMPA; previously at Meta Reality Labs and Hand Talk.
+        areas: [data-poisoning]
+        links:
+          website: "https://hallpaz.github.io"
+          scholar: "https://scholar.google.com.br/citations?hl=en&user=Lb2XwsYAAAAJ"
+          github: "https://github.com/hallpaz"
+          email: "hallison.paz@polytechnique.edu"
+
+      - name: "Myriam Tami"
+        # Listed as "Tami Myriam" in the group chat; check the name order.
+        # TODO: role, bio, areas
+
+      - name: "Xiaozhen Wang"
+        # TODO: role, bio, areas
+
+      # People listed by first name only in the group chat. Add their full
+      # names (and uncomment) so the page lists everyone:
+      # - name: "Ammar …"
+      # - name: "Julien …"      # Julien Fageot co-authored MultiKrum and On Monotonicity
+      # - name: "Khalid …"
+      # - name: "Martin …"      # Martin Van Waerebeke co-authored the VRU unlearning paper
+      # - name: "Nicole …"
+      # - name: "Sébastien …"   # Sébastien Rouault co-authored many Byzantine ML papers
+
+  - title: "Collaborators"
+    members:
+      - name: "Karim Lounici"
+        role: "Professor"
+        affiliation: "CMAP, École Polytechnique"
+        bio: >-
+          Works on high-dimensional statistics and machine learning; holds
+          the Business Analytics for Future Banking chair at École Polytechnique.
+
+      - name: "Katia Meziani"
+        role: "Associate Professor"
+        affiliation: "CEREMADE, Université Paris Dauphine–PSL"
+        bio: >-
+          Works on nonparametric and high-dimensional statistics and, more
+          recently, on machine learning.
+
+      - name: "Vladimir Kostic"
+        role: "Researcher"
+        affiliation: "Istituto Italiano di Tecnologia"
+        bio: >-
+          Works on statistical learning of operators and dynamical systems,
+          and on scalable clustering.
+
+      - name: "Peva Blanchard"
+        bio: >-
+          Co-author of Krum, the first provably Byzantine-resilient
+          aggregation rule, and of recent work on monotonicity in AI alignment.
+        areas: [byzantine-learning, ai-safety]
+
+alumni: []
+  # - name: "Former Member"
+  #   role: "PhD student"
+  #   years: "2022–2025"
+  #   now: "Research scientist at …"

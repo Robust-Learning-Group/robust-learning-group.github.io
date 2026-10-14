@@ -1,0 +1,70 @@
+# ---------------------------------------------------------------------------
+# Site-wide settings
+# ---------------------------------------------------------------------------
+site_name: "Robust Learning Group"
+institution: "CMAP, École Polytechnique"
+institution_url: "https://cmap.ip-paris.fr"
+description: >-
+  The Robust Learning Group at CMAP, École Polytechnique, studies machine
+  learning that keeps working when some data, machines or participants
+  cannot be trusted.
+
+# Where the site is published. If it lives under a subpath
+# (e.g. https://user.github.io/robust-learning/), set base_path: "/robust-learning".
+base_url: "https://robust-learning.github.io"
+base_path: ""
+
+# Appearance: pick a theme defined in themes.yaml.
+# theme_switcher: true shows a small picker so colleagues can preview every
+# theme on the live site. Set it to false once you've decided.
+theme: "navy"
+theme_switcher: true
+
+# Number of most recent publications shown on the home page.
+home_latest_publications: 5
+
+contact_email: "hallison.paz@polytechnique.edu"   # TODO: replace with the group contact
+address:
+  - "Centre de Mathématiques Appliquées (CMAP)"
+  - "École Polytechnique, Route de Saclay"
+  - "91120 Palaiseau, France"
+
+nav:
+  - title: "Home"
+    page: "home"
+    url: "/"
+  - title: "Research"
+    page: "research"
+    url: "/research/"
+  - title: "Publications"
+    page: "publications"
+    url: "/publications/"
+  - title: "People"
+    page: "people"
+    url: "/people/"
+  - title: "News"
+    page: "news"
+    url: "/news/"
+
+# News items reference one of these by `kind:`. Colors are used for the marker.
+news_kinds:
+  - name: "paper"
+    label: "Paper"
+    light: "#1f4e8c"
+    dark: "#86b4f0"
+  - name: "talk"
+    label: "Talk"
+    light: "#6a4c93"
+    dark: "#b9a2e0"
+  - name: "people"
+    label: "People"
+    light: "#2f7a5b"
+    dark: "#7fd1aa"
+  - name: "award"
+    label: "Award"
+    light: "#9a6b00"
+    dark: "#e6c063"
+  - name: "update"
+    label: "Update"
+    light: "#5b6577"
+    dark: "#a7b1c3"

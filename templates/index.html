@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% from "partials/macros.html" import publication, news_item %}
+
+{% block content %}
+<section class="hero wrap">
+  <div class="hero-text">
+    <h1>{{ home.meta.headline }}</h1>
+    <div class="prose hero-prose">{{ home.body | markdown }}</div>
+    <p class="hero-actions">
+      <a class="button" href="{{ url('/research/') }}">Explore our research</a>
+      <a class="button button-quiet" href="{{ url('/publications/') }}">Browse publications</a>
+    </p>
+  </div>
+
+  <figure class="agg-figure" aria-labelledby="agg-caption">
+    <canvas id="agg-canvas" role="img"
+      aria-label="Scatter plot of worker gradients. Honest gradients form a cluster; adversarial gradients sit far away. The average is pulled toward the adversaries, the geometric median stays with the honest cluster."></canvas>
+    <div class="agg-controls">
+      <label for="agg-slider">Adversarial workers</label>
+      <input id="agg-slider" type="range" min="0" max="30" step="1" value="12">
+      <output id="agg-count" for="agg-slider">12</output>
+    </div>
+    <ul class="agg-legend">
+      <li><span class="key key-primary"></span>Honest gradient</li>
+      <li><span class="key key-byz"></span>Adversarial gradient</li>
+      <li><span class="key key-mean"></span>Average</li>
+      <li><span class="key key-median"></span>Geometric median</li>
+    </ul>
+    <figcaption id="agg-caption">
+      Forty honest workers and <span id="agg-count-text">12</span> adversarial ones send gradients to a server.
+      The average drifts toward the attackers; a robust aggregate does not.
+    </figcaption>
+  </figure>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Research areas</h2>
+      <a class="more" href="{{ url('/research/') }}">All research</a>
+    </div>
+    <ul class="area-list">
+      {% for area in research %}
+      <li>
+        <a href="{{ url('/research/') }}#{{ area.slug }}">
+          <h3>{{ area.title }}</h3>
+          <p>{{ area.summary }}</p>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<div class="wrap two-col">
+  <section>
+    <div class="section-head">
+      <h2>Latest publications</h2>
+      <a class="more" href="{{ url('/publications/') }}">All publications</a>
+    </div>
+    <div class="pub-list">
+      {% for pub in latest_publications %}{{ publication(pub, show_areas=false) }}{% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>News</h2>
+      <a class="more" href="{{ url('/news/') }}">All news</a>
+    </div>
+    {% if recent_news %}
+    <ol class="news-list news-compact">
+      {% for n in recent_news %}{{ news_item(n) }}{% endfor %}
+    </ol>
+    {% else %}
+    <p class="empty">No news yet.</p>
+    {% endif %}
+  </section>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ asset('js/aggregation.js') }}" defer></script>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% from "partials/macros.html" import news_item %}
+{% block title %}News | {{ config.site_name }}{% endblock %}
+
+{% block content %}
+<header class="page-head wrap">
+  <h1>News</h1>
+</header>
+<div class="wrap">
+  {% if news %}
+  <ol class="news-list">
+    {% for n in news %}{{ news_item(n) }}{% endfor %}
+  </ol>
+  {% else %}
+  <p class="empty">No news yet. Add entries to data/news.yaml.</p>
+  {% endif %}
+</div>
+{% endblock %}

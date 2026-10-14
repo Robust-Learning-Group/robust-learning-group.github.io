@@ -1,0 +1,14 @@
+# kind: one of the news_kinds defined in config.yaml (paper, talk, people, award, update)
+# body is Markdown. link is optional.
+
+- date: 2026-10-14
+  kind: update
+  title: "The group has a new website"
+  body: "Research areas, publications and people, all in one place."
+
+- date: 2026-09-01
+  kind: people
+  title: "Hallison Paz joins as a postdoctoral researcher"
+  body: >-
+    Hallison will work on data poisoning and dataset ownership verification.
+  link: "https://hallpaz.github.io"
