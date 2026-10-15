@@ -23,8 +23,9 @@
 
 - title: "Byzantine Machine Learning: MultiKrum and an Optimal Notion of Robustness"
   authors: ["Gilles Bareilles", "Wassim Bouaziz", "Julien Fageot", "El Mahdi El Mhamdi"]
-  venue: "ICLR 2026"
-  date: 2026-04
+  venue: "PODC 2026"
+  note: "Brief announcement"
+  date: 2026
   areas: [byzantine-learning]
   links:
     arxiv: "https://arxiv.org/abs/2602.03899"
@@ -39,22 +40,23 @@
 
 - title: "On Monotonicity in AI Alignment"
   authors: ["Gilles Bareilles", "Julien Fageot", "Lê-Nguyên Hoang", "Peva Blanchard", "Wassim Bouaziz", "Sébastien Rouault", "Sadegh Farhadkhani", "El Mahdi El Mhamdi"]
-  venue: "ICLR 2026"
-  date: 2026-04
+  venue: "arXiv preprint"
+  date: 2025-06
   areas: [ai-safety]
-  links: {}   # TODO: add arXiv/OpenReview link
+  links:
+    arxiv: "https://arxiv.org/abs/2506.08998"
 
 - title: "Approaching the Harm of Gradient Attacks While Only Flipping Labels"
   authors: ["Abdessamad El-Kabid", "El Mahdi El Mhamdi"]
-  venue: "ICLR 2026"   # check: venue from Lacuna only
-  date: 2026-04
+  venue: "Transactions on Machine Learning Research (TMLR)"
+  date: 2026   # TODO: confirm the year of the TMLR publication
   areas: [data-poisoning]
   links:
     arxiv: "https://arxiv.org/abs/2503.00140"
 
 - title: "Dropout and the Outliers: Could Transformers Overcome Their Single Points of Failure?"
   authors: ["Nour Hezbri", "Gilles Bareilles", "El Mahdi El Mhamdi"]
-  venue: "Sci4DL Workshop 2026"
+  venue: "ICLR 2026 Workshop on Scientific Methods for Understanding Deep Learning (Sci4DL)"
   date: 2026-04
   areas: [ai-safety]
   links:
@@ -95,18 +97,18 @@
   links:
     code: "https://github.com/LPD-EPFL/ByzantineMomentum"
 
-# - title: "The Hidden Vulnerability of Distributed Learning in Byzantium"
-#   authors: ["El Mahdi El Mhamdi", "Rachid Guerraoui", "Sébastien Rouault"]
-#   venue: "ICML 2018"
-#   date: 2018-07
-#   areas: [byzantine-learning]
-#   links:
-#     arxiv: "https://arxiv.org/abs/1802.07927"
+- title: "The Hidden Vulnerability of Distributed Learning in Byzantium"
+  authors: ["El Mahdi El Mhamdi", "Rachid Guerraoui", "Sébastien Rouault"]
+  venue: "ICML 2018"
+  date: 2018-07
+  areas: [byzantine-learning]
+  links:
+    arxiv: "https://arxiv.org/abs/1802.07927"
 
-# - title: "Machine Learning with Adversaries: Byzantine Tolerant Gradient Descent"
-#   authors: ["Peva Blanchard", "El Mahdi El Mhamdi", "Rachid Guerraoui", "Julien Stainer"]
-#   venue: "NeurIPS 2017"
-#   date: 2017-12
-#   areas: [byzantine-learning]
-#   links:
-#     arxiv: "https://arxiv.org/abs/1703.02757"
+- title: "Machine Learning with Adversaries: Byzantine Tolerant Gradient Descent"
+  authors: ["Peva Blanchard", "El Mahdi El Mhamdi", "Rachid Guerraoui", "Julien Stainer"]
+  venue: "NeurIPS 2017"
+  date: 2017-12
+  areas: [byzantine-learning]
+  links:
+    arxiv: "https://arxiv.org/abs/1703.02757"

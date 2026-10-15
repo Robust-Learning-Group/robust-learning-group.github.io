@@ -1,4 +1,6 @@
 # Sections appear on /people/ in this order. Rename or add sections freely.
+# Within each section, people are sorted alphabetically by first name
+# automatically; add `sort: false` to a section to keep the order written here.
 #
 # Fields per person:
 #   name (required)
@@ -11,10 +13,6 @@
 #   aliases:     other spellings used in author lists (for highlighting on /publications/)
 #
 # Alumni additionally take `years` and `now`.
-#
-# NOTE ON SOURCES (October 2026): bios below were written from public pages
-# and from papers co-authored with El Mahdi. Roles marked "TODO" could not be
-# confirmed publicly; please fill them in (or ask each person to check theirs).
 
 sections:
   - title: "Faculty"
@@ -32,59 +30,17 @@ sections:
           website: "https://elmahdielmhamdi.com"
           scholar: "https://scholar.google.com/citations?user=kNA-WLQAAAAJ"
 
-  - title: "Researchers and students"
-    # Alphabetical by surname.
+  - title: "Postdoctoral researchers"
     members:
-      - name: "Jalal Baim"
-        # TODO: role, bio, areas
-
       - name: "Gilles Bareilles"
-        role: ""  # TODO: confirm role
+        role: "Postdoctoral researcher"
         bio: >-
           Works on the theory of robust aggregation and preference alignment.
           PhD from Université Grenoble Alpes (Laboratoire Jean Kuntzmann);
           previously a postdoc at the Czech Technical University in Prague.
         areas: [byzantine-learning, ai-safety]
-
-      - name: "Mariam Barry"
-        # TODO: role, bio, areas
-
-      - name: "Martin Beaufils"
-        # TODO: role, bio, areas
-
-      - name: "Wassim Bouaziz"
-        role: ""  # TODO: confirm role (affiliated with Meta FAIR and CMAP in his papers)
-        bio: >-
-          Works on data poisoning: dataset ownership verification through
-          harmless poisons, gradient-inversion attacks, and indirect poisoning
-          of language models at pre-training.
-        areas: [data-poisoning, byzantine-learning]
         links:
-          github: "https://github.com/wesbz"
-
-      - name: "Arthur Danjou"
-        # TODO: role, bio, areas
-
-      - name: "Abdessamad El-Kabid"
-        role: ""  # TODO: confirm role
-        bio: >-
-          Works on label-flipping attacks and how much harm weak, realistic
-          adversaries can cause in distributed training.
-        areas: [data-poisoning]
-
-      - name: "Nour Hezbri"
-        role: ""  # TODO: confirm role
-        bio: >-
-          Works on outlier activations in transformers and the effect of
-          Dropout on these single points of failure.
-        areas: [ai-safety]
-
-      - name: "Adrien Majka"
-        role: ""  # TODO: confirm role
-        bio: >-
-          Works on formalising Goodhart's law and what it implies for
-          optimising proxy metrics in AI alignment.
-        areas: [ai-safety]
+          website: "https://gbareilles.fr"
 
       - name: "Hallison Paz"
         role: "Postdoctoral researcher"
@@ -98,21 +54,86 @@ sections:
           github: "https://github.com/hallpaz"
           email: "hallison.paz@polytechnique.edu"
 
+      - name: "Xiaozhen Wang"
+        role: "Postdoctoral researcher"
+        # bio: >-
+        #   Works on …          # TODO: finish this sentence, then uncomment
+        # areas: [...]           # "optimal-transport" would first need an entry in research.yaml
+        links:
+          scholar: "https://scholar.google.com/citations?user=-E8_uwEAAAAJ&hl=zh-CN"
+
+  - title: "PhD students"
+    members:
+      - name: "Martin Beaufils"
+        role: "PhD student"
+        # TODO: bio, areas
+
+      - name: "Nicole Osayande"
+        role: "PhD student"
+        # TODO: bio, areas
+
+      - name: "Nour Hezbri"
+        role: "PhD student"
+        bio: >-
+          Works on outlier activations in transformers and the effect of
+          Dropout on these single points of failure.
+        areas: [ai-safety]
+
+  - title: "Research engineers"
+    members:
+      - name: "Abdessamad El-Kabid"
+        role: "Research engineer"
+        bio: >-
+          Works on label-flipping attacks and how much harm weak, realistic
+          adversaries can cause in distributed training.
+        areas: [data-poisoning]
+
+      - name: "Jalal Baim"
+        aliases: ["Mohamed Jalal Baim"]
+        role: "Research engineer"
+        bio: >-
+          Works on membership inference and data leakage in fine-tuned
+          language models, and on explainability for vision models. MSc in
+          Applied Mathematics and Statistics from École Polytechnique.
+        links:
+          website: "https://jalalbaim.github.io/portfolio/"
+          scholar: "https://scholar.google.com/citations?user=Vn39lHQAAAAJ"
+          github: "https://github.com/Jalalbaim"
+
+  - title: "Interns"
+    members:
+      - name: "Arthur Danjou"
+        role: "Research intern, starting a PhD in November 2026"
+        bio: >-
+          Works on Byzantine-robust aggregation, dataset ownership
+          verification and communication-efficient learning. Develops
+          [Krum](https://github.com/calicarpa/krum), an open-source library
+          of Byzantine-robust aggregation rules.
+        areas: [byzantine-learning, data-poisoning]
+        links:
+          website: "https://arthurdanjou.fr/"
+
+  # TODO: these people don't have a confirmed role yet. Move each one into
+  # the right section above, then delete this section.
+  - title: "Other members"
+    members:
+      - name: "Adrien Majka"
+        bio: >-
+          Works on formalising Goodhart's law and what it implies for
+          optimising proxy metrics in AI alignment.
+        areas: [ai-safety]
+
+      - name: "Mariam Barry"
+
       - name: "Myriam Tami"
         # Listed as "Tami Myriam" in the group chat; check the name order.
-        # TODO: role, bio, areas
 
-      - name: "Xiaozhen Wang"
-        # TODO: role, bio, areas
-
-      # People listed by first name only in the group chat. Add their full
-      # names (and uncomment) so the page lists everyone:
-      # - name: "Ammar …"
-      # - name: "Julien …"      # Julien Fageot co-authored MultiKrum and On Monotonicity
-      # - name: "Khalid …"
-      # - name: "Martin …"      # Martin Van Waerebeke co-authored the VRU unlearning paper
-      # - name: "Nicole …"
-      # - name: "Sébastien …"   # Sébastien Rouault co-authored many Byzantine ML papers
+  # People still listed by first name only in the group chat:
+  # - name: "Ammar …"
+  # - name: "Julien …"      # Julien Fageot co-authored MultiKrum and On Monotonicity
+  # - name: "Khalid …"
+  # - name: "Martin …"      # Martin Van Waerebeke co-authored the VRU unlearning paper
+  # - name: "Sébastien …"   # Sébastien Rouault co-authored many Byzantine ML papers
 
   - title: "Collaborators"
     members:
@@ -143,8 +164,10 @@ sections:
           aggregation rule, and of recent work on monotonicity in AI alignment.
         areas: [byzantine-learning, ai-safety]
 
-alumni: []
-  # - name: "Former Member"
-  #   role: "PhD student"
-  #   years: "2022–2025"
-  #   now: "Research scientist at …"
+alumni:
+  - name: "Wassim Bouaziz"
+    role: "PhD student"
+    years: "until 2025"
+    now: "Mistral AI"
+    links:
+      github: "https://github.com/wesbz"

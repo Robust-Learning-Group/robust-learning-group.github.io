@@ -23,7 +23,7 @@ theme_switcher: true
 # Number of most recent publications shown on the home page.
 home_latest_publications: 5
 
-contact_email: "hallison.paz@polytechnique.edu"   # TODO: replace with the group contact
+contact_email: ""   # TODO: replace with the group contact
 address:
   - "Centre de Mathématiques Appliquées (CMAP)"
   - "École Polytechnique, Route de Saclay"

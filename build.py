@@ -90,6 +90,11 @@ def slugify(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
 
+def name_key(person: Dict[str, Any]) -> str:
+    """Sort key: full name, accents stripped, case-insensitive (i.e. by first name)."""
+    return slugify(person["name"])
+
+
 def initials(name: str) -> str:
     """'El Mahdi El Mhamdi' -> 'EM' (first and last word)."""
     words = [w for w in re.split(r"\s+", name.strip()) if w]
@@ -246,13 +251,13 @@ def load_people(area_slugs: set) -> Dict[str, Any]:
     for s_i, section in enumerate(raw.get("sections") or []):
         where = f"data/people.yaml, section {s_i + 1}"
         require(section, ["title", "members"], where)
-        sections.append({
-            "title": section["title"],
-            "members": [
-                person(m, f"{where} ({section['title']}), member {m_i + 1}")
-                for m_i, m in enumerate(section["members"])
-            ],
-        })
+        members = [
+            person(m, f"{where} ({section['title']}), member {m_i + 1}")
+            for m_i, m in enumerate(section["members"])
+        ]
+        if section.get("sort", True):
+            members.sort(key=name_key)
+        sections.append({"title": section["title"], "members": members})
 
     alumni = [
         person(m, f"data/people.yaml, alumni entry {i + 1}", alumni=True)
@@ -474,6 +479,8 @@ def build(clean: bool = False) -> None:
     for p in people["current"]:
         for slug in p["areas"]:
             areas_by_slug[slug]["people"].append(p)
+    for area in research:
+        area["people"].sort(key=name_key)
 
     latest_count = int(config.get("home_latest_publications", 5))
 
