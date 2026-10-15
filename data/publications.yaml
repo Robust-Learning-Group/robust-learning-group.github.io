@@ -23,9 +23,8 @@
 
 - title: "Byzantine Machine Learning: MultiKrum and an Optimal Notion of Robustness"
   authors: ["Gilles Bareilles", "Wassim Bouaziz", "Julien Fageot", "El Mahdi El Mhamdi"]
-  venue: "PODC 2026"
-  note: "Brief announcement"
-  date: 2026
+  venue: "arXiv preprint"
+  date: 2026-02
   areas: [byzantine-learning]
   links:
     arxiv: "https://arxiv.org/abs/2602.03899"

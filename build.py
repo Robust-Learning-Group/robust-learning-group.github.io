@@ -233,7 +233,7 @@ def load_people(area_slugs: set) -> Dict[str, Any]:
             "bio": item.get("bio", ""),
             "areas": item.get("areas") or [],
             "links": ordered_links(item.get("links"), PERSON_LINKS, where),
-            "years": str(item.get("years", "")),
+            "graduated": str(item.get("graduated", "")),
             "now": item.get("now", ""),
             "alumni": alumni,
         }
@@ -255,7 +255,18 @@ def load_people(area_slugs: set) -> Dict[str, Any]:
             person(m, f"{where} ({section['title']}), member {m_i + 1}")
             for m_i, m in enumerate(section["members"])
         ]
-        if section.get("sort", True):
+        role_order = [r.lower() for r in section.get("role_order") or []]
+        if role_order:
+            # Group by role (in the order given), then alphabetically by first name.
+            # Roles that match no entry come after all listed roles, by first name.
+            def role_rank(p, _order=role_order):
+                role = p["role"].lower()
+                for i, prefix in enumerate(_order):
+                    if role.startswith(prefix):
+                        return i
+                return len(_order)
+            members.sort(key=lambda p: (role_rank(p), name_key(p)))
+        elif section.get("sort", True):
             members.sort(key=name_key)
         sections.append({"title": section["title"], "members": members})
 

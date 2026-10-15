@@ -1,6 +1,9 @@
 # Sections appear on /people/ in this order. Rename or add sections freely.
 # Within each section, people are sorted alphabetically by first name
 # automatically; add `sort: false` to a section to keep the order written here.
+# A section with `role_order` is sorted by role first (a role matches an entry
+# when it starts with it, case-insensitively), then by first name. Everyone
+# whose role matches no entry comes after, sorted by first name.
 #
 # Fields per person:
 #   name (required)
@@ -12,7 +15,7 @@
 #   links:       website, scholar, github, linkedin, orcid, email
 #   aliases:     other spellings used in author lists (for highlighting on /publications/)
 #
-# Alumni additionally take `years` and `now`.
+# Alumni additionally take `graduated` (the year they finished) and `now`.
 
 sections:
   - title: "Faculty"
@@ -30,8 +33,35 @@ sections:
           website: "https://elmahdielmhamdi.com"
           scholar: "https://scholar.google.com/citations?user=kNA-WLQAAAAJ"
 
-  - title: "Postdoctoral researchers"
+  - title: "Researchers and students"
+    role_order: ["Postdoctoral researcher", "PhD student"]
     members:
+      - name: "Adrien Majka"
+        role: "PhD student"
+        bio: >-
+          Works on the alignment of machine learning algorithms, in particular
+          on formalising Goodhart's law and what it implies for optimising
+          proxy metrics.
+        areas: [ai-safety]
+
+      - name: "Abdessamad El-Kabid"
+        role: "Research engineer"
+        bio: >-
+          Works on label-flipping attacks and how much harm weak, realistic
+          adversaries can cause in distributed training.
+        areas: [data-poisoning]
+
+      - name: "Arthur Danjou"
+        role: "Research intern, starting a PhD in November 2026"
+        bio: >-
+          Works on Byzantine-robust aggregation, dataset ownership
+          verification and communication-efficient learning. Develops
+          [Krum](https://github.com/calicarpa/krum), an open-source library
+          of Byzantine-robust aggregation rules.
+        areas: [byzantine-learning, data-poisoning]
+        links:
+          website: "https://arthurdanjou.fr/"
+
       - name: "Gilles Bareilles"
         role: "Postdoctoral researcher"
         bio: >-
@@ -54,40 +84,6 @@ sections:
           github: "https://github.com/hallpaz"
           email: "hallison.paz@polytechnique.edu"
 
-      - name: "Xiaozhen Wang"
-        role: "Postdoctoral researcher"
-        # bio: >-
-        #   Works on …          # TODO: finish this sentence, then uncomment
-        # areas: [...]           # "optimal-transport" would first need an entry in research.yaml
-        links:
-          scholar: "https://scholar.google.com/citations?user=-E8_uwEAAAAJ&hl=zh-CN"
-
-  - title: "PhD students"
-    members:
-      - name: "Martin Beaufils"
-        role: "PhD student"
-        # TODO: bio, areas
-
-      - name: "Nicole Osayande"
-        role: "PhD student"
-        # TODO: bio, areas
-
-      - name: "Nour Hezbri"
-        role: "PhD student"
-        bio: >-
-          Works on outlier activations in transformers and the effect of
-          Dropout on these single points of failure.
-        areas: [ai-safety]
-
-  - title: "Research engineers"
-    members:
-      - name: "Abdessamad El-Kabid"
-        role: "Research engineer"
-        bio: >-
-          Works on label-flipping attacks and how much harm weak, realistic
-          adversaries can cause in distributed training.
-        areas: [data-poisoning]
-
       - name: "Jalal Baim"
         aliases: ["Mohamed Jalal Baim"]
         role: "Research engineer"
@@ -100,40 +96,41 @@ sections:
           scholar: "https://scholar.google.com/citations?user=Vn39lHQAAAAJ"
           github: "https://github.com/Jalalbaim"
 
-  - title: "Interns"
-    members:
-      - name: "Arthur Danjou"
-        role: "Research intern, starting a PhD in November 2026"
-        bio: >-
-          Works on Byzantine-robust aggregation, dataset ownership
-          verification and communication-efficient learning. Develops
-          [Krum](https://github.com/calicarpa/krum), an open-source library
-          of Byzantine-robust aggregation rules.
-        areas: [byzantine-learning, data-poisoning]
-        links:
-          website: "https://arthurdanjou.fr/"
+      - name: "Martin Beaufils"
+        role: "PhD student"
+        # TODO: bio, areas
 
-  # TODO: these people don't have a confirmed role yet. Move each one into
-  # the right section above, then delete this section.
-  - title: "Other members"
-    members:
-      - name: "Adrien Majka"
+      - name: "Nicole Osayande"
+        role: "PhD student"
+        affiliation: "Meta FAIR and IP Paris"
         bio: >-
-          Works on formalising Goodhart's law and what it implies for
-          optimising proxy metrics in AI alignment.
+          Works on LLM alignment and reasoning in social contexts, with a
+          focus on responsible AI and algorithmic fairness. BSc from Queen's
+          University and MSc from McGill University.
         areas: [ai-safety]
 
-      - name: "Mariam Barry"
+      - name: "Nour Hezbri"
+        role: "PhD student"
+        bio: >-
+          Works on outlier activations in transformers and the effect of
+          Dropout on these single points of failure.
+        areas: [ai-safety]
 
-      - name: "Myriam Tami"
-        # Listed as "Tami Myriam" in the group chat; check the name order.
+      - name: "Xiaozhen Wang"
+        role: "Postdoctoral researcher"
+        bio: >-
+          Works on entropic optimal transport and Sinkhorn-type algorithms,
+          with applications from robust finance to routing. PhD from
+          Université Paris-Dauphine–PSL (CEREMADE), supervised by Giovanni
+          Conforti and Zhenjie Ren; engineering degree from École Polytechnique.
+        links:
+          scholar: "https://scholar.google.com/citations?user=-E8_uwEAAAAJ"
 
-  # People still listed by first name only in the group chat:
-  # - name: "Ammar …"
-  # - name: "Julien …"      # Julien Fageot co-authored MultiKrum and On Monotonicity
-  # - name: "Khalid …"
-  # - name: "Martin …"      # Martin Van Waerebeke co-authored the VRU unlearning paper
-  # - name: "Sébastien …"   # Sébastien Rouault co-authored many Byzantine ML papers
+      # People still listed by first name only in the group chat:
+      # - name: "Ammar …"
+      # - name: "Julien …"      # Julien Fageot co-authored MultiKrum and On Monotonicity
+      # - name: "Khalid …"
+      # - name: "Martin …"      # Martin Van Waerebeke co-authored the VRU unlearning paper
 
   - title: "Collaborators"
     members:
@@ -158,6 +155,29 @@ sections:
           Works on statistical learning of operators and dynamical systems,
           and on scalable clustering.
 
+      - name: "Mariam Barry"
+        # TODO: role, affiliation, bio
+
+      - name: "Myriam Tami"
+        role: "Associate Professor (HDR)"
+        affiliation: "MICS, CentraleSupélec, Université Paris-Saclay"
+        bio: >-
+          Works on reliable statistical learning at the intersection of
+          machine learning, statistics and causality. Collaborates with the
+          group on causality-based indirect data poisoning.
+        areas: [data-poisoning]
+        links:
+          website: "https://myriamtami.github.io/"
+
+      - name: "Sébastien Rouault"
+        bio: >-
+          Works on distributed systems at the intersection of security and
+          machine learning. PhD from EPFL under El Mahdi's supervision, on
+          Byzantine-resilient distributed learning and privacy.
+        areas: [byzantine-learning]
+        links:
+          website: "https://sebastien.rouau.lt/"
+
       - name: "Peva Blanchard"
         bio: >-
           Co-author of Krum, the first provably Byzantine-resilient
@@ -167,7 +187,7 @@ sections:
 alumni:
   - name: "Wassim Bouaziz"
     role: "PhD student"
-    years: "until 2025"
+    graduated: 2025
     now: "Mistral AI"
     links:
-      github: "https://github.com/wesbz"
+      website: "https://wesbz.github.io/"

@@ -23,7 +23,8 @@
           {% if p.bio %}<p class="person-bio">{{ p.bio | markdown_inline }}</p>{% endif %}
           {% if p.areas %}
           <ul class="person-areas" aria-label="Research areas">
-            {% for slug in p.areas %}<li><a href="{{ url('/research/') }}#{{ slug }}">{{ areas_by_slug[slug].short }}</a></li>{% endfor %}
+            {% for slug in p.areas %}<li><a href="{{ url('/research/') }}#{{ slug }}">{{ areas_by_slug[slug].short
+                }}</a></li>{% endfor %}
           </ul>
           {% endif %}
           {% if p.links %}
@@ -43,13 +44,20 @@
     <h2>Alumni</h2>
     <div class="table-scroll">
       <table class="alumni">
-        <thead><tr><th scope="col">Name</th><th scope="col">Role in the group</th><th scope="col">Years</th><th scope="col">Now</th></tr></thead>
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Role in the group</th>
+            <th scope="col">Graduated</th>
+            <th scope="col">Now</th>
+          </tr>
+        </thead>
         <tbody>
           {% for p in people.alumni %}
           <tr id="{{ p.slug }}">
             <td>{% if p.links %}<a href="{{ p.links[0].url }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</td>
             <td>{{ p.role }}</td>
-            <td>{{ p.years }}</td>
+            <td>{{ p.graduated }}</td>
             <td>{{ p.now }}</td>
           </tr>
           {% endfor %}
