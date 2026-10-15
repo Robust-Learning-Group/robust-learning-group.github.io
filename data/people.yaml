@@ -52,7 +52,7 @@ sections:
         areas: [data-poisoning]
 
       - name: "Arthur Danjou"
-        role: "Research intern, starting a PhD in November 2026"
+        role: "Research intern, incoming PhD student (November 2026)"
         bio: >-
           Works on Byzantine-robust aggregation, dataset ownership
           verification and communication-efficient learning. Develops
