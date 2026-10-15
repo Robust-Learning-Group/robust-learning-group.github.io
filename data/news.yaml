@@ -1,14 +1,31 @@
-# kind: one of the news_kinds defined in config.yaml (paper, talk, people, award, update)
+# kind: one of the news_kinds defined in config.yaml (paper, talk, course, people, award, update)
 # body is Markdown. link is optional.
 
-- date: 2026-10-14
+- date: 2026-10-15
   kind: update
   title: "The group has a new website"
   body: "Research areas, publications and people, all in one place."
+
+- date: 2026-10-02
+  kind: course
+  title: "Advanced course accepted at the 36th Brazilian Mathematics Colloquium"
+  body: >-
+    "Bilevel Optimization for Data Poisoning and Dataset Ownership Verification",
+    by Hallison Paz, Wassim Bouaziz and El Mahdi El Mhamdi, has been accepted as
+    an advanced course. The accompanying textbook will be published by IMPA.
+  # link: ""   # TODO: add the CBM event page once the course is announced
+
+- date: 2026-10-01
+  kind: people
+  title: "Xiaozhen Wang joins as a postdoctoral researcher"
+  body: >-
+    Xiaozhen completed his PhD on entropic optimal transport at Université
+    Paris-Dauphine–PSL.
 
 - date: 2026-09-01
   kind: people
   title: "Hallison Paz joins as a postdoctoral researcher"
   body: >-
-    Hallison will work on data poisoning and dataset ownership verification.
+    Hallison holds a PhD from IMPA and previously worked at Meta Reality Labs
+    and Hand Talk.
   link: "https://hallpaz.github.io"

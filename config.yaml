@@ -68,3 +68,7 @@ news_kinds:
     label: "Update"
     light: "#5b6577"
     dark: "#a7b1c3"
+  - name: "course"
+    label: "Course"
+    light: "#0e6b6b"
+    dark: "#5fc4c0"
