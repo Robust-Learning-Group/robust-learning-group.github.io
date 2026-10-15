@@ -95,19 +95,3 @@
   areas: [byzantine-learning]
   links:
     code: "https://github.com/LPD-EPFL/ByzantineMomentum"
-
-- title: "The Hidden Vulnerability of Distributed Learning in Byzantium"
-  authors: ["El Mahdi El Mhamdi", "Rachid Guerraoui", "Sébastien Rouault"]
-  venue: "ICML 2018"
-  date: 2018-07
-  areas: [byzantine-learning]
-  links:
-    arxiv: "https://arxiv.org/abs/1802.07927"
-
-- title: "Machine Learning with Adversaries: Byzantine Tolerant Gradient Descent"
-  authors: ["Peva Blanchard", "El Mahdi El Mhamdi", "Rachid Guerraoui", "Julien Stainer"]
-  venue: "NeurIPS 2017"
-  date: 2017-12
-  areas: [byzantine-learning]
-  links:
-    arxiv: "https://arxiv.org/abs/1703.02757"
